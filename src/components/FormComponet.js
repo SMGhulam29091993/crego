@@ -79,7 +79,6 @@ const Forms = () => {
                     
                     <Form.Group>
                       <Row>
-                      <div style={{display:"flex", flexDirection:"column", flexWrap:"wrap"}}>
                         <Col xs={12} md={4} lg={3} xl={2}>
                           <Form.Label style={{textTransform:"uppercase", fontWeight : "bold"}}>Key</Form.Label>
                           <Form.Select
@@ -116,10 +115,8 @@ const Forms = () => {
                           <Form.Label style={{textTransform:"uppercase", fontWeight : "bold"}}>Score</Form.Label>
                           <Form.Control type="text" id="score" onChange={handleOutput} required/>
                         </Col>
-                        </div>
                       </Row>
                     </Form.Group>                    
-                    
                   </Col>
               </Row>
             </Container>
