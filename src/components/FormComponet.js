@@ -9,7 +9,6 @@ const Forms = () => {
   const [output, setOutput] = useState({});
   const [rules, setRules] = useState([]);
   const [expression, setExpression] = useState({rules:[]});
-  const [showJson,setShowJson] = useState(false)
 
   const handleOutput = (e) => {
     setOutput({
@@ -42,9 +41,7 @@ const Forms = () => {
     });
   };
   
-  const showJSON = ()=>{
-    setShowJson(!showJson);
-  }
+  
   
   
 
