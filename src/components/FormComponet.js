@@ -11,7 +11,7 @@ const Forms = () => {
   const [output, setOutput] = useState({});
   const [rules, setRules] = useState([]);
   const [expression, setExpression] = useState({rules:[]});
-  const [showJson,setShowJson] = useState(false)
+  // const [showJson,setShowJson] = useState(false)
 
 
   const handleOutput = (e) => {
@@ -45,9 +45,9 @@ const Forms = () => {
     });
   };
   
-  const handleShowJSON = ()=>{
-    setShowJson(!showJson);
-  };
+  // const handleShowJSON = ()=>{
+  //   setShowJson(!showJson);
+  // };
 
   return (
     <>
@@ -129,10 +129,10 @@ const Forms = () => {
               </Row>
             </Container>
             </div>  
-            <div>
+            {/* <div>
               <Button onClick={handleShowJSON}>Show Json</Button>
               {showJson && <JSONTree data={expression} /> }
-            </div>           
+            </div>            */}
         </div>
         <div style={{display:"flex", flexDirection:"column"}}>
           { expression.rules.length > 0 && (<h4 style={{ textAlign: "center" }}>Rules</h4>)}
