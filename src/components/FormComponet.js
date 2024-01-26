@@ -1,6 +1,5 @@
 import React, {useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import ReactJson from 'react-json-view'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Forms = () => {
@@ -9,7 +8,7 @@ const Forms = () => {
   const [output, setOutput] = useState({});
   const [rules, setRules] = useState([]);
   const [expression, setExpression] = useState({rules:[]});
-  const [showJson,setShowJson] = useState(false)
+
 
   const handleOutput = (e) => {
     setOutput({
@@ -42,12 +41,6 @@ const Forms = () => {
     });
   };
   
-  
-  const showJSON = ()=>{
-    setShowJson(!showJson);
-  }
-  
-
   return (
     <>
       <main>
@@ -127,12 +120,7 @@ const Forms = () => {
                 </Col>               
               </Row>
             </Container>
-            </div> 
-            <div style={{width:"40%"}}>
-              <Button onClick={showJSON}> Show JSON Format</Button>
-              {showJson && <ReactJson src={expression} theme="monokai" collapsed={false} />}
-            </div>
-               
+            </div>             
         </div>
         <div style={{display:"flex", flexDirection:"column"}}>
           { expression.rules.length > 0 && (<h4 style={{ textAlign: "center" }}>Rules</h4>)}
