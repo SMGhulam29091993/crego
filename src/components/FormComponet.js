@@ -2,7 +2,6 @@ import React, {useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { JSONTree } from 'react-json-tree';
 
 
 const Forms = () => {
@@ -11,7 +10,7 @@ const Forms = () => {
   const [output, setOutput] = useState({});
   const [rules, setRules] = useState([]);
   const [expression, setExpression] = useState({rules:[]});
-  // const [showJson,setShowJson] = useState(false)
+  const [showJson,setShowJson] = useState(false)
 
 
   const handleOutput = (e) => {
@@ -45,13 +44,14 @@ const Forms = () => {
     });
   };
   
-  // const handleShowJSON = ()=>{
-  //   setShowJson(!showJson);
-  // };
+  const handleShowJSON = ()=>{
+    setShowJson(!showJson);
+  };
 
   return (
     <>
       <main>
+        
         <div style={{display:"flex", justifyContent:"space-evenly", width:"100%"}}>
           <div style={{width : "60%"}}>
             <Container fluid style={{padding:"1rem"}}>
@@ -129,10 +129,11 @@ const Forms = () => {
               </Row>
             </Container>
             </div>  
-            {/* <div>
+            <div>
               <Button onClick={handleShowJSON}>Show Json</Button>
-              {showJson && <JSONTree data={expression} /> }
-            </div>            */}
+              {showJson && <pre style={{background:"black", color: "#fff", height:"auto"}}>{JSON.stringify(expression, null, 2)}</pre>}
+
+            </div>           
         </div>
         <div style={{display:"flex", flexDirection:"column"}}>
           { expression.rules.length > 0 && (<h4 style={{ textAlign: "center" }}>Rules</h4>)}
