@@ -80,7 +80,7 @@ const Forms = () => {
                     <Form.Group>
                       <Row>
                         <Col xs={12} md={4} lg={3} xl={2}>
-                          <Form.Label style={{textTransform:"uppercase", fontWeight : "bold"}}>Key</Form.Label>
+                          <Form.Label className="mt-1"  style={{textTransform:"uppercase", fontWeight : "bold"}}>Key</Form.Label>
                           <Form.Select
                             aria-label="Default select example"
                             id="key"
@@ -93,11 +93,11 @@ const Forms = () => {
                           </Form.Select>
                         </Col>
                         <Col xs={12} md={4} lg={3} xl={2}>
-                          <Form.Label style={{textTransform:"uppercase", fontWeight : "bold"}}>Value</Form.Label>
+                          <Form.Label className="mt-1" style={{textTransform:"uppercase", fontWeight : "bold"}}>Value</Form.Label>
                           <Form.Control type="text" id="value" onChange={handleOutput} required/>
                         </Col>
                         <Col xs={12} md={4} lg={3} xl={2}>
-                          <Form.Label style={{textTransform:"uppercase", fontWeight : "bold"}}>Operator</Form.Label>
+                          <Form.Label className="mt-1" style={{textTransform:"uppercase", fontWeight : "bold"}}>Operator</Form.Label>
                           <Form.Select
                             aria-label="Default select example"
                             id="operator"
@@ -112,7 +112,7 @@ const Forms = () => {
                           </Form.Select>
                         </Col>
                         <Col xs={12} md={4} lg={3} xl={2}>
-                          <Form.Label style={{textTransform:"uppercase", fontWeight : "bold"}}>Score</Form.Label>
+                          <Form.Label className="mt-1" style={{textTransform:"uppercase", fontWeight : "bold"}}>Score</Form.Label>
                           <Form.Control type="text" id="score" onChange={handleOutput} required/>
                         </Col>
                       </Row>
@@ -142,10 +142,10 @@ const Forms = () => {
           {expression && expression.rules.map((rule, index) => (
             <li key={index} style={{display:"flex",flexWrap:"wrap", alignItems:"center", justifyContent:"space-between",padding: "1rem", 
               border:"1.5px solid black", textTransform:"uppercase", fontWeight: "Bold", marginBottom:"10px"}}>
-              <span style={{maxWidth:"4rem"}}>Key  <span style={{color:"blue" }}>{JSON.stringify(rule.key)}</span></span>
-              <span style={{maxWidth:"4rem"}}>Value  <span style={{color:"blue" }}>{JSON.stringify(rule.output.value)}</span></span>
-              <span style={{maxWidth:"4rem"}}>Operator <span style={{color:"blue" }}>{JSON.stringify(rule.output.operator)}</span></span>
-              <span style={{maxWidth:"4rem"}}>Score <span style={{color:"blue" }}>{JSON.stringify(rule.output.score)}</span></span>
+              <span className="mr-1" style={{maxWidth:"4rem"}}>Key  <span style={{color:"blue" }}>{JSON.stringify(rule.key)}</span></span>
+              <span className="mr-1"  style={{maxWidth:"4rem"}}>Value  <span style={{color:"blue" }}>{JSON.stringify(rule.output.value)}</span></span>
+              <span className="mr-1"  style={{maxWidth:"4rem"}}>Operator <span style={{color:"blue" }}>{JSON.stringify(rule.output.operator)}</span></span>
+              <span className="mr-1"  style={{maxWidth:"4rem"}}>Score <span style={{color:"blue" }}>{JSON.stringify(rule.output.score)}</span></span>
               <Button style={{background:"red", border: "none", outline:"none"}} onClick={()=>handleDelete(index)}>Delete</Button>
             </li>
           ))}
