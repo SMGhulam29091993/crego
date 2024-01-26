@@ -142,10 +142,10 @@ const Forms = () => {
           {expression && expression.rules.map((rule, index) => (
             <li key={index} style={{display:"flex",flexWrap:"wrap", alignItems:"center", justifyContent:"space-between",padding: "1rem", 
               border:"1.5px solid black", textTransform:"uppercase", fontWeight: "Bold", marginBottom:"10px"}}>
-              <span className="mr-1" style={{maxWidth:"4rem"}}>Key  <span style={{color:"blue" }}>{JSON.stringify(rule.key)}</span></span>
-              <span className="mr-1"  style={{maxWidth:"4rem"}}>Value  <span style={{color:"blue" }}>{JSON.stringify(rule.output.value)}</span></span>
-              <span className="mr-1"  style={{maxWidth:"4rem"}}>Operator <span style={{color:"blue" }}>{JSON.stringify(rule.output.operator)}</span></span>
-              <span className="mr-1"  style={{maxWidth:"4rem"}}>Score <span style={{color:"blue" }}>{JSON.stringify(rule.output.score)}</span></span>
+              <span style={{minWidth:"4rem", marginRight:"15px"}}>Key  <span style={{color:"blue" }}>{JSON.stringify(rule.key)}</span></span>
+              <span style={{minWidth:"4rem",marginRight:"15px"}}>Value  <span style={{color:"blue" }}>{JSON.stringify(rule.output.value)}</span></span>
+              <span style={{minWidth:"4rem", marginRight:"15px"}}>Operator <span style={{color:"blue" }}>{JSON.stringify(rule.output.operator)}</span></span>
+              <span style={{minWidth:"4rem", marginRight:"15px"}}>Score <span style={{color:"blue" }}>{JSON.stringify(rule.output.score)}</span></span>
               <Button style={{background:"red", border: "none", outline:"none"}} onClick={()=>handleDelete(index)}>Delete</Button>
             </li>
           ))}
