@@ -11,6 +11,7 @@ const Forms = () => {
   const [output, setOutput] = useState({});
   const [rules, setRules] = useState([]);
   const [expression, setExpression] = useState({rules:[]});
+  const [showJson,setShowJson] = useState(false)
 
 
   const handleOutput = (e) => {
@@ -44,6 +45,10 @@ const Forms = () => {
     });
   };
   
+  const handleShowJSON = ()=>{
+    setShowJson(!showJson);
+  };
+
   return (
     <>
       <main>
@@ -125,8 +130,8 @@ const Forms = () => {
             </Container>
             </div>  
             <div>
-              <Button>Show Json</Button>
-              {expression && expression.rules && <JSONTree data={expression} /> }
+              <Button onClick={handleShowJSON}>Show Json</Button>
+              {showJson && <JSONTree data={expression} /> }
             </div>           
         </div>
         <div style={{display:"flex", flexDirection:"column"}}>
