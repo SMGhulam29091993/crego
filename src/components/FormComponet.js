@@ -2,6 +2,9 @@ import React, {useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { JSONTree } from 'react-json-tree';
+
+
 const Forms = () => {
   const [combinator, setCombinator] = useState('');
   const [key, setKey] = useState('');
@@ -120,7 +123,11 @@ const Forms = () => {
                 </Col>               
               </Row>
             </Container>
-            </div>             
+            </div>  
+            <div>
+              <Button>Show Json</Button>
+              {expression && expression.rules && <JSONTree data={expression} /> }
+            </div>           
         </div>
         <div style={{display:"flex", flexDirection:"column"}}>
           { expression.rules.length > 0 && (<h4 style={{ textAlign: "center" }}>Rules</h4>)}
